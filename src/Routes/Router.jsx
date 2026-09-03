@@ -1,13 +1,15 @@
 import { createBrowserRouter } from "react-router";
+import HomeLayout from "../Layouts/HomeLayout";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <h1>This is root route</h1>,
+        element: <HomeLayout></HomeLayout>,
         children: [
             {
                 index: true,
-                element: <h1>This is home</h1>
+                element: <h1 className="text-4xl text-red-500">This is home</h1>
             }
         ]
     },
@@ -16,7 +18,11 @@ export const router = createBrowserRouter([
         element: <h1>this is news layout</h1>
     },
     {
-        path: '/auth-layout',
+        path: '/auth',
         element: <h1>This is auth layout</h1>
+    },
+    {
+        path : '/*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
