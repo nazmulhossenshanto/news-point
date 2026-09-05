@@ -1,8 +1,12 @@
+import SocialLogin from "../SocialLogin/SocialLogin";
+
  
 const RightAside = () => {
   return (
-    <div>RightAside</div>
+    <div>
+      <SocialLogin></SocialLogin>
+    </div>
   )
 }
 
-export default RightAside
+export default RightAside;
