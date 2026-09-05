@@ -6,7 +6,7 @@ const Categories = () => {
     const categories = use(categoryPromise); 
   return (
     <div className="flex flex-col gap-3">
-        All Categories
+        <h1 className="text-xl font-bold">All Categories</h1>
         {
           categories.map(category=>(<NavLink
              className={`btn  bg-base-100 border-0 font-bold hover:bg-base-300 `}

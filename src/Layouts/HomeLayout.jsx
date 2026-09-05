@@ -24,7 +24,7 @@ const HomeLayout = () => {
        </header> 
      <main className="w-11/12 mx-auto">
            {/* This section will divided in three part */}
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 gap-4">
            {/* This section will divided in three part */}
         {/* <h1>This is from home page</h1> */}
         {/* left aside */}
