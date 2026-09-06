@@ -1,11 +1,12 @@
-import { Link } from "react-router"
+ 
+import { Link } from "react-router" 
 
  
-const Login = () => {
+const Login = () => { 
   return (
     <div className="flex items-center justify-center">
        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <h1 className="text-xl font-semibold text-center mt-5">Login to your account</h1>
+      <h1 className="text-xl font-semibold text-center mt-5">Login to your account  </h1>
       <div className="card-body">
         <fieldset className="fieldset">
           <label className="label">Email</label>
