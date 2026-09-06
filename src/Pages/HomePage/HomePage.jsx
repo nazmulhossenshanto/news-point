@@ -1,11 +1,10 @@
+import { Navigate } from "react-router"
+
  
 
  
 const HomePage = () => {
-  return (
-    <div  > 
-    </div>
-  )
+  return <Navigate to='/category/0'></Navigate>
 }
 
-export default HomePage
+export default HomePage;

@@ -1,9 +1,15 @@
+import { Outlet } from "react-router";
 import Navbar from "../shared/Navbar/Navbar"
 
 const AuthLayout = () => {
   return (
-    <div className="w-11/12 mx-auto mt-10">
-        <Navbar></Navbar>
+    <div  className="bg-base-200 min-h-screen">
+        <header className="w-11/12 mx-auto py-4">
+          <Navbar></Navbar>
+        </header>
+        <main className="w-11/12 mx-auto  ">
+          <Outlet></Outlet>
+        </main>
     </div>
   )
 }

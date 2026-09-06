@@ -28,7 +28,7 @@ const HomeLayout = () => {
            {/* This section will divided in three part */}
         {/* <h1>This is from home page</h1> */}
         {/* left aside */}
-       <div className="col-span-3">
+       <div className="col-span-3 sticky top-5 h-fit">
          <LeftAside></LeftAside>
        </div>
 
@@ -38,7 +38,7 @@ const HomeLayout = () => {
        </div>
 
         {/* Right aside */}
-       <div className="col-span-3">
+       <div className="col-span-3 sticky top-5 h-fit">
          <RightAside></RightAside>
        </div>
     </div>
