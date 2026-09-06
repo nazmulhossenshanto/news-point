@@ -4,10 +4,19 @@ import { use } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
-  const { user, loading } = use(AuthContext);
-  console.log(user);
+  const { user, loading, signOutUser } = use(AuthContext);
+  // console.log(user);
   if (loading) {
     return <p>Loading...</p>;
+  };
+  const handleSignOut = async() =>{
+    try {
+      await signOutUser()
+      console.log('User logged out successfully');
+    } catch (error) {
+      console.log('sign Out error : ', error);
+      
+    }
   }
   return (
     <div className="flex justify-between items-center my-5">
@@ -30,7 +39,7 @@ const Navbar = () => {
           <img src={userImg} alt="" />
         )}
         {user ? (
-          <button className="btn btn-accent btn-outline">Log Out</button>
+          <button onClick={handleSignOut} className="btn btn-accent btn-outline">Log Out</button>
         ) : (
           <Link to="/auth/login">
             <button className="btn bg-gray-700 text-white px-8">Login</button>
