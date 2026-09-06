@@ -28,12 +28,12 @@ const Navbar = () => {
         <NavLink to="/career">Career</NavLink>
       </div>
       <div className="flex justify-center items-center gap-3">
-        {user ? (
+        {user?.photoURL ? (
           <img
             className="h-10 w-10 rounded-full"
-            src={user.photoURL}
-            alt={user.displayName}
-            title={user.displayName}
+            src={user?.photoURL}
+            alt={user?.displayName}
+            title={user?.displayName}
           />
         ) : (
           <img src={userImg} alt="" />
