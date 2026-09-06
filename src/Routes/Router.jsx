@@ -3,6 +3,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import HomePage from "../Pages/HomePage/HomePage";
 import CategoryNews from "../Components/HomeLayout/CategoryNews";
+import AuthLayout from "../Layouts/AuthLayout";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/auth',
-        element: <h1>This is auth layout</h1>
+        element: <AuthLayout></AuthLayout>
     },
     {
         path : '/*',

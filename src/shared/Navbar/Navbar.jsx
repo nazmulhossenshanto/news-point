@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
         <div className="flex justify-center items-center gap-3"> 
             <img src={userImg} alt="" />
-            <button className="btn bg-gray-400 px-8">Login</button>
+            <NavLink  to='/auth'><button className="btn bg-gray-700 text-white px-8">Login</button></NavLink>
         </div>
     </div>
   )

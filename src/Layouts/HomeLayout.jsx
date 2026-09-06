@@ -1,4 +1,4 @@
-import { Outlet } from "react-router"
+import { Outlet } from "react-router" 
 import Header from "../Components/Header/Header"
 import LeftAside from "../Components/HomeLayout/LeftAside"
 import LatestNews from "../Components/LatestNews/LatestNews"

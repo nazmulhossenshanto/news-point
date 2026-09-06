@@ -6,7 +6,7 @@ const NewsCard = ({news}) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const publishedTime = new Date(news.author.published_date).toLocaleTimeString("en-GB", {
         day: "2-digit", month: "2-digit", year: "numeric",
-        hour: "2-digit", minute: "2-digit", hour12: true, })
+        hour: "2-digit", minute: "2-digit", hour12: true, });
   return (
     <div className=" shadow-lg space-y-4"> 
     {/* header div */}
