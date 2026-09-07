@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center my-5">
       {/* this div is empty */}
       <div>
-        {user && <h1 className="text-xl font-bold">{user.displayName}</h1>}
+        {user && <h1 className="text-xl font-bold">{user.email}</h1>}
       </div>
       <div className="nav flex items-center gap-3">
         <NavLink to="/">Home</NavLink>
