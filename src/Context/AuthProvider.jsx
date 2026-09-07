@@ -10,19 +10,23 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
     // Sign Up user with email and password
     const createUser = (email, password)=>{
+      setLoading(true)
       return createUserWithEmailAndPassword(auth, email, password);
     }
     // Sign in user with google account
     const googleSingIn = ()=>{
+      setLoading(true)
         return signInWithPopup(auth, googleProvider)
     };
 
     // Sing in with email and password
     const signInWithEmail = (email, password)=>{
+      setLoading(true)
       return signInWithEmailAndPassword(auth, email, password)
     }
     // sign out logged in user
     const signOutUser = ()=>{
+      setLoading(true)
       return signOut(auth)
     }
 
