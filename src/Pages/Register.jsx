@@ -5,6 +5,8 @@ import { Link } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Register = () => {
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const {createUser} = use(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const handleRegister = async(e)=>{
@@ -12,11 +14,19 @@ const Register = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    if(password.length < 6){
+      return setError('Password must be at least 6 characters!')
+    };
+    setSubmitting(true);
+    setError('')
     try {
       const result = await createUser(email, password);
       console.log('User created successfully', result.user);
     } catch (error) {
       console.log('user creating error', error);
+      setError(error.message)
+    }finally{
+      setSubmitting(false)
     }
   }
   return (
@@ -48,8 +58,10 @@ const Register = () => {
               }
             </button>
           </div>
+
+          {error && <p className="text-red-500">{error}</p>}
           
-          <button type="submit" className="btn btn-neutral mt-4">Register</button>
+          <button type="submit" disabled={isSubmitting} className="btn btn-neutral mt-4">{isSubmitting ? 'Registering...' : 'Register'}</button>
           <p className="font-semibold text-center text-gray-600 mt-5">Already have an accoutn ? <Link to='/auth/login' className="text-red-400">Login</Link></p>
         </fieldset>
       </form>

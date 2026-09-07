@@ -4,11 +4,9 @@ import { use } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
-  const { user, loading, signOutUser } = use(AuthContext);
+  const { user, signOutUser } = use(AuthContext);
   // console.log(user);
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  
   const handleSignOut = async () => {
     try {
       await signOutUser();
