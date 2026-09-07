@@ -1,9 +1,9 @@
- import { useState } from "react";
+ 
 import { FaEye, FaRegBookmark, FaStar } from "react-icons/fa6";
  import { IoShareSocialOutline } from "react-icons/io5";
+import { Link } from "react-router";
 
-const NewsCard = ({news}) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+const NewsCard = ({news}) => { 
     const publishedTime = new Date(news.author.published_date).toLocaleTimeString("en-GB", {
         day: "2-digit", month: "2-digit", year: "numeric",
         hour: "2-digit", minute: "2-digit", hour12: true, });
@@ -28,7 +28,14 @@ const NewsCard = ({news}) => {
     </div>
     <h1 className="text-xl font-bold">{news.title}</h1>
     <img src={news.image_url} alt=" " className="h-100 object-cover w-full"   />
-    <div className="px-4"> <p className="text-gray-500"> {isExpanded ? news.details : `${news.details.slice(0, 150)}...`} </p> <button onClick={() => setIsExpanded(!isExpanded)} className="text-blue-600 font-semibold mt-2 hover:underline" > {isExpanded ? "Read Less" : "Read More"} </button> </div>
+    <div>
+        {
+            news.details.length > 150 ? (<>
+            {news.details.slice(0,150)}... <Link to={`/news-details/${news.id}`}
+            className="font-semibold cursor-pointer text-red-600 hover:underline">Read More</Link>
+            </>) : <p>{news.details}</p>
+        }
+    </div>
     <div className="flex justify-between items-center mb-2 p-4">
         <div className="flex gap-2 items-center">
             <p className="text-yellow-400 font-semibold flex items-center justify-center gap-1"><FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> </p>

@@ -41,7 +41,7 @@ const CategoryNews = () => {
   return ( 
     <div>
       <div>
-        <h2 className="text-xl font-bold mb-5"> Total <span className="text-red-500">{ categoryNews.length}</span> news Found</h2>
+        <h2 className="text-xl font-bold mb-5"> Total <span className="text-red-600">{ categoryNews.length}</span> news Found</h2>
       </div>
       <div className="grid grid-cols-1 gap-8">
         {
