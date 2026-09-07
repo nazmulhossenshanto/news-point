@@ -4,13 +4,12 @@ import { use } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
-  const { user, signOutUser } = use(AuthContext);
-  // console.log(user);
+  const { user, signOutUser } = use(AuthContext); 
   
   const handleSignOut = async () => {
     try {
       await signOutUser();
-      console.log("User logged out successfully");
+      alert('User logged out successfully')
     } catch (error) {
       console.log("sign Out error : ", error);
     }

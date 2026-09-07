@@ -21,11 +21,10 @@ const Login = () => {
 
     setSubmitting(true);
     try {
-      const result = await signInWithEmail(email, password);
-      console.log(result.user);
+      await signInWithEmail(email, password);
+       
       navigate(`${location.state ? location.state : '/'}`)
-    } catch (error) {
-      console.log('login error ', error);
+    } catch (error) { 
       setError(error.message)
       
     }finally {

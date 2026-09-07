@@ -21,9 +21,8 @@ const Register = () => {
     setError('')
     try {
       const result = await createUser(email, password);
-      console.log('User created successfully', result.user);
+      alert(`${result.user.email} registered successfully`)
     } catch (error) {
-      console.log('user creating error', error);
       setError(error.message)
     }finally{
       setSubmitting(false)

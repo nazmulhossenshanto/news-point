@@ -7,10 +7,10 @@ const SocialLogin = () => {
   const handleGoogleSignIn = async()=>{
    try{
     const result = await googleSingIn();
-    console.log('from social login', result.user); 
+    alert(`${result.user.email} sign in successful`)
    }
    catch(error){
-    console.log(error);
+    alert(`${error.message}`)
    }
     }
   

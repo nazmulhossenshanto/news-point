@@ -6,10 +6,8 @@ import NewsDetailsCard from "../../Components/NewsDetailsCard"
  
 const NewsDetails = () => {
     const data = useLoaderData();
-    const {id} = useParams();
-    // console.log(data, id);
-    const news = data.find(item=> item.id === id);
-    // console.log(news);
+    const {id} = useParams(); 
+    const news = data.find(item=> item.id === id); 
   return (
     <div>
         <header>
